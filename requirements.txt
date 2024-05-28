@@ -1,0 +1,10 @@
+fastapi
+fastapi-utils
+passlib
+password-strength
+PyJWT
+pymongo
+python-dotenv
+requests
+typing-inspect
+pydantic[email]
