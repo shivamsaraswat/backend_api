@@ -38,6 +38,14 @@ class ApiController:
             return self.api_service.facebook_ads(email, search_term, country)
         except Exception as e:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+    
+    @api_controller_router.get("/test_facebook_ads")
+    def test_facebook_ads(self, search_term: str = "dropshipping", country: str = "us")->dict:
+        return self.api_service.test_facebook_ads(search_term,country)
+    
+    @api_controller_router.get("/test_data")
+    def test_facebook_ads(self)->dict:
+        return self.api_service.test_data()
 
     @api_controller_router.post("/tiktok_ads")
     def tiktok_ads(self, email: str, search_term: str = "dropshipping", country: str = "us") -> dict:
